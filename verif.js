@@ -8,33 +8,33 @@ function verificar() {
             window.alert('ERRO')
         } else {
             var gen = window.document.getElementsByName('op1')
-            var fot = window.document.getElementById('foto')
+            var fot = window.document.querySelector('img#foto')
             fot.style.display = 'block'
                 if (gen[0].checked) {
-                    if(idade > 0 || idade < 18) {
+                    if(idade > 0 && idade < 18) {
                         resul.innerHTML = `Detectamos homem com ${idade} anos.`
-                        fot.setAttribute('src','adolescente.jpeg')
-                    } else if(idade >= 18 || idade <= 70) {
+                        fot.src = 'imagens/adolescente.jpeg'
+                    } else if(idade >= 18 && idade <= 70) {
                         resul.innerHTML = `Detectamos homem com ${idade} anos.`
-                        fot.setAttribute('src','adulto.jpeg')
+                        fot.src = 'imagens/adulto.jpeg'
 
                     } else {
                         resul.innerHTML = `Detectamos homem com ${idade} anos.`
-                        fot.setAttribute('src','idoso.jpg')
+                        fot.src = 'imagens/idoso.jpg'
                     }
 
                     } else if (gen[1].checked) {
-                        if (idade > 0 || idade < 18)
+                        if (idade > 0 && idade < 18){
                             resul.innerHTML = `Detectamos mulher com ${idade} anos.`
-                            fot.src = ''
-                    } else if (idade >= 18 <= 70) {
+                            fot.src = 'imagens/mulheradolescente.jpg'
+                    } else if (idade >= 18 && idade <= 70) {
                             resul.innerHTML = `Detectamos mulher com ${idade} anos.`
-                            fot.src = ''
+                            fot.src = 'imagens/mulherjovem.jpg'
 
                     } else {
                             resul.innerHTML = `Detectamos mulher com ${idade} anos.`
-                            fot.src = ''
-                    }
+                            fot.src = 'imagens/mulheridosa.jpeg'
+                    } }
         resul.style.textAlign = 'center'
         resul.style.fontWeight = 'bolder'
         resul.style.fontSize = '2em'
